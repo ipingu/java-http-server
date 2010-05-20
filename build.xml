@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HttpServer" basedir="." default="launch">
+	
+	<property name="web.root" value="E:\coding\maven-repository" />
+	<property name="web.port" value="8181" />
+	
+	
+	<!-- Run target -->
+	<target name="launch">
+		<java jar="HttpServer.jar" fork="true">
+			<arg value="${web.root}" />
+			<arg value="${web.port}" />
+		</java>
+	</target>
+	
+	<!-- Development target -->
+    <target name="build">
+		<mkdir dir="target"/>
+		<javac srcdir="E:\coding\java-http-server\src\" destdir="target" />
+		
+        <jar destfile="HttpServer.jar" basedir="target">
+			<manifest>
+				<attribute name="Main-Class" value="com.clairiot.utils.HttpServer"/>
+			</manifest>
+		</jar>	
+	
+		<delete dir="target" />
+	</target>
+
+
+</project>

@@ -1,0 +1,9 @@
+Why this project ?
+
+I like to have a usb disk where I store my development environment (Eclipse and projects sources), so I can work on every computer. Sometimes, the computer I am using does not have an internet connection (even if it's rare nowadays). But when it occurs, there's no way to retrieve project dependencies.
+
+To avoid this situation, I often copy project dependencies in a specific folder, keeping the repository layout, so I always have dependencies on my usb disk. By exposing this folder over HTTP, and adding this local repository in the project pom, Maven retrieve successfully the required dependencies. Cool.
+
+
+
+The server is developped by Paul James Mutton (http://www.jibble.org/miniwebserver/). Thanks to him.
